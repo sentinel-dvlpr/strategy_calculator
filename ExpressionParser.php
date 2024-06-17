@@ -1,6 +1,6 @@
 <?php
 
-require_once 'strategy/Calculator.php';
+require_once 'strategy/CalculatorContext.php';
 require_once 'strategy/AdditionStrategy.php';
 require_once 'strategy/SubtractionStrategy.php';
 require_once 'strategy/MultiplicationStrategy.php';
@@ -8,14 +8,14 @@ require_once 'strategy/DivisionStrategy.php';
 
 class ExpressionParser
 {
-	private Calculator $calculator;
+	private CalculatorContext $calculator;
 
 	public function __construct()
 	{
-		$this->calculator = new Calculator();
+		$this->calculator = new CalculatorContext();
 	}
 
-	public function calculate($expression): string
+	public function calculate(string $expression): int|string|float
 	{
 		$expression = preg_replace('/\s+/', '', $expression);
 

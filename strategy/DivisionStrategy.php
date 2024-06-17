@@ -1,8 +1,8 @@
 <?php
 
-require_once 'OperationStrategy.php';
+require_once 'OperationStrategyInterface.php';
 
-class DivisionStrategy implements OperationStrategy
+class DivisionStrategy implements OperationStrategyInterface
 {
 	public function execute(int|float $a, int|float $b): float|int|string
 	{
